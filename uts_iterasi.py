@@ -21,4 +21,6 @@ for i in range(2, n + 2):
         fxi = fungsi_fx(persamaan_gx, xiSelanjutnya)
 
 print(f"\nNilai x didapatkan pada saat iterasi ke-{i-1} dengan nilai = {xiSelanjutnya:.2f}\n")
+
+#tes
     
