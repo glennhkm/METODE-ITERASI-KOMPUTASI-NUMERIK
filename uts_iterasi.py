@@ -20,6 +20,3 @@ for i in range(1, n + 2):
     
 
 print(f"\nNilai x didapatkan pada saat iterasi ke-{i} dengan nilai = {xiAwal:.2f}\n")
-
-#tes
-    
