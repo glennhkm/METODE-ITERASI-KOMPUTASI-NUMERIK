@@ -9,8 +9,12 @@ def get_float_input(prompt):
         except ValueError:
             print("Input tidak valid! Mohon periksa kembali input Anda")
 
-fungsi_fx = lambda persamaan, x : float(eval(persamaan))  #lambda ni sama aja kaya buat fungsi biasa, kek diatas
-fungsi_gx = lambda persamaan, x  : float(eval(persamaan))
+# lambda ni sama aja kaya buat fungsi biasa, kek diatas
+
+
+def fungsi_fx(persamaan, x): return float(eval(persamaan))
+def fungsi_gx(persamaan, x): return float(eval(persamaan))
+
 
 print("=====Panduan penggunaan operator=====")
 print("| Operator tambah : +               |")
@@ -30,20 +34,24 @@ n = get_float_input("Masukkan jumlah maksimum iterasi (N): ")
 e = get_float_input("Masukkan toleransi error (e): ")
 
 print()
-print(f"{'Iterasi':<10}{'xi':<20}{'g(xi)':<20}{'f(xi)':<20}")
+print("="*83)
+print(f"{'|':<3}{'Iterasi':<10}{'|':<3}{'xi':<20}{'|':<3}{'g(xi)':<20}{'|':<3}{'f(xi)':<20}{'|':<1}")
+print("="*83)
 
 for i in range(1, int(n) + 2):
     gxi = fungsi_gx(persamaan_gx, xiAwal)
     fxi = fungsi_fx(persamaan_fx, xiAwal)
-    
-    print(f"{i:<10}{xiAwal:<20}{gxi:<20}{fxi:<20}")
-    
+
+    print(f"{'|':<3}{i:<10}{'|':<3}{xiAwal:<20}{'|':<3}{gxi:<20}{'|':<3}{fxi:<20}{'|':<1}")
+
     if fxi < e:
-        print(f"\nNilai x didapatkan pada saat iterasi ke-{i} dengan nilai = {xiAwal:.2f}\n")
+        print("-"*83)  # End of the table
+        print(
+            f"\nNilai x didapatkan pada saat iterasi ke-{i} dengan nilai = {xiAwal:.2f}\n")
         break
     xiAwal = gxi
-    
+
     if i == n + 2:
-        print(f"\nMaksimum jumlah iterasi telah tercapai, Maka nilai x akan diambil pada iterasi + 1, yaitu x = {xiAwal}.\n")
-      
-      
+        print("-"*83)  # End of the table
+        print(
+            f"\nMaksimum jumlah iterasi telah tercapai, Maka nilai x akan diambil pada iterasi + 1, yaitu x = {xiAwal}.\n")
