@@ -9,18 +9,17 @@ persamaan_gx = input('Masukkan persamaan g(x) : ')
 xiAwal = int(input('Masukkan X Awal : '))
 n = int(input("Masukkan nilai n : "))
 e = float(0.0001)
-fxi = fungsi_fx(persamaan_fx, xiAwal)
-gxi = fungsi_gx(persamaan_gx, xiAwal)
 
-for i in range(2, n + 2):
+for i in range(1, n + 2):
+    gxi = fungsi_gx(persamaan_gx, xiAwal)
+    fxi = fungsi_fx(persamaan_fx, xiAwal)
+    #tampilin table disini
     if fxi < e:
         break
-    else:
-        xiSelanjutnya = gxi
-        gxi = fungsi_gx(persamaan_fx, xiSelanjutnya)
-        fxi = fungsi_fx(persamaan_gx, xiSelanjutnya)
+    xiAwal = gxi
+    
 
-print(f"\nNilai x didapatkan pada saat iterasi ke-{i-1} dengan nilai = {xiSelanjutnya:.2f}\n")
+print(f"\nNilai x didapatkan pada saat iterasi ke-{i} dengan nilai = {xiAwal:.2f}\n")
 
 #tes
     
