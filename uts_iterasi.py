@@ -42,7 +42,7 @@ for i in range(1, int(n) + 2):
 
     print(f"{'|':<3}{i:<10}{'|':<3}{xiAwal:<20.6f}{'|':<3}{gxi:<20.6f}{'|':<3}{fxi:<20.6f}{'|':<1}")
 
-    if fxi < e:
+    if abs(fxi) < e:
         print("-"*83)  # End of the table
         print(
             f"\nNilai x didapatkan pada saat iterasi ke-{i} dengan nilai = {xiAwal:.2f}\n")
